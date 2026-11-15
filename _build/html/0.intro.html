@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Introduction &#8212; The Principles of Statistical Modelling</title>
   
@@ -31,10 +31,10 @@
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/test.css?v=90b7ad94" />
@@ -50,11 +50,11 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -324,7 +324,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -348,7 +348,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -386,8 +386,8 @@
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
-<p>Traditional approaches to teaching statistics often view the discipline as a loosely-related collection of methods. The reality, however, is that the vast majority of statistical analyses are part of a singular generic framework. This framework hinges on the concept of a <em>statistical model</em>, where different analyses involve changing certain elements of the model, whilst leaving other elements the same. Viewing statistics this way allows for a deep appreciation of the <em>connection</em> between seemingly disparate analysis approaches. Furthermore, the steps involved in the analysis and the assumptions underlying the analysis are the <em>same</em>, irrespective of the specific model used. This allows for a <em>consolidation</em> of ideas into a single unifying framework that can be applied to a wide variety of datasets. Understanding this framework is one of the best things you can do to elevate your skills as an experimental psychologist, allowing for a flexible and widely-applicable approach to statistical analysis.</p>
-<p>This lesson is about the core principles needed in order to full appreciate this unifying framework. As such, it is vital that you study the ideas in this lesson as thoroughly as you can. This will necessarily be somewhat abstract at present, but the aim is to make this more concrete in the coming weeks as we see more examples. Because of this, we would encourage you to revisit this lesson periodically throughout the course as the more examples you are exposed to, the more this content will make sense. We want these ideas to become second nature to you, as this is the mark of a strong and skilled data analyst. However, they will not necessarily all be intuitive to you on a first read. Learning is an iterative process, so we expect you to have a go at understanding everything in here, but recognise that much of it may only start to click once you see it in action. By the end of this module, you should be able to revisit this lesson and understand it thoroughly.</p>
+<p>Traditional approaches to teaching statistics often view the discipline as a loosely-related collection of methods. The reality, however, is that the vast majority of statistical analyses are part of a singular generic framework. This framework hinges on the concept of a <em>statistical model</em>, where different analyses involve changing certain elements of the model, whilst leaving other elements the same. Viewing statistics this way allows for a deep appreciation of the <em>connection</em> between seemingly disparate analysis approaches. Furthermore, the steps involved in the analysis and the assumptions underlying the analysis are the <em>same</em>, irrespective of the specific model used. This allows for a <em>consolidation</em> of ideas into a single unifying framework that can be applied to a wide variety of datasets. Understanding this framework is one of the best things you can do to elevate your skills, allowing for a flexible and widely-applicable approach to statistical analysis.</p>
+<p>This lesson is about the core principles needed in order to fully appreciate this unifying framework. As such, it is vital that you study the ideas in this lesson as thoroughly as you can. This will necessarily be somewhat abstract at present, but the aim is to make this more concrete in the coming weeks as we see more examples. Because of this, we would encourage you to revisit this lesson periodically throughout the course as the more examples you are exposed to, the more this content will make sense. Learning is an iterative process, so we expect you to have a go at understanding everything in here, but recognise that much of it may only start to click once you see it in action. By the end of this unit, you should be able to revisit this lesson and understand it thoroughly.</p>
 <section id="contents">
 <h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
@@ -405,7 +405,8 @@
 <h2>About the Authors<a class="headerlink" href="#about-the-authors" title="Link to this heading">#</a></h2>
 <br/>
 <figure class="align-right">
-<a class="reference internal image-reference" href="_images/martyn.jpeg"><img alt="_images/martyn.jpeg" src="_images/martyn.jpeg" style="width: 185.7px; height: 223.04999999999998px;" /></a>
+<a class="reference internal image-reference" href="_images/martyn.jpeg"><img alt="_images/martyn.jpeg" src="_images/martyn.jpeg" style="width: 185.7px; height: 223.04999999999998px;" />
+</a>
 </figure>
 <p><strong>Dr Martyn McFarquhar | PhD FHEA</strong></p>
 <p>Lecturer in Neuroimaging</p>
@@ -415,7 +416,8 @@
 <br/>
 <br/></p>
 <figure class="align-left">
-<a class="reference internal image-reference" href="_images/george.jpg"><img alt="_images/george.jpg" src="_images/george.jpg" style="width: 190.4px; height: 190.4px;" /></a>
+<a class="reference internal image-reference" href="_images/george.jpg"><img alt="_images/george.jpg" src="_images/george.jpg" style="width: 190.4px; height: 190.4px;" />
+</a>
 </figure>
 <p><strong>Dr George Farmer | PhD FHEA</strong></p>
 <p>Lecturer in Experimental Psychology</p>
@@ -474,11 +476,12 @@
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contents">Contents</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-the-authors">About the Authors</a></li>
