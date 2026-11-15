@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Probability and Random Variables &#8212; The Principles of Statistical Modelling</title>
   
@@ -31,10 +31,10 @@
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/test.css?v=90b7ad94" />
@@ -50,11 +50,11 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -323,7 +323,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -347,7 +347,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -394,24 +394,24 @@
 <p>We have now established that <em>variance</em> is the key property that we wish to capture from any given dataset. The fact that measured values differ from datapoint-to-datapoint implies an inherent <em>randomess</em> and <em>uncertainty</em> to real-world data. As such, in order to say anything about the variance in our data, we need some means of formalising this randomness. This formalisation comes from the world of <em>probability</em>.</p>
 <div class="tip admonition">
 <p class="admonition-title">The Meaning of “Randomness”</p>
-<p>Unlike the common understanding of the term, <em>randomness</em> in probability does not mean completely unstructured and unpredictable. In everyday speech, when we say that something happened “randomly”, that is often taken as meaning that it could not have been predicted. However, in the more formal world of probability, the term <em>random</em> has a very specific definition that means something that is unpredictable in the short term, but has a <em>predictable regularity</em> over the long term. This is captured within the concept of a <em>random variable</em>.</p>
+<p>Unlike the common understanding of the term, <em>randomness</em> in probability does not mean completely unstructured and unpredictable. In everyday speech, when we say that something happened “randomly”, that is often taken as meaning that it could not have been predicted. However, in the more formal world of probability, the term <em>random</em> has a very specific definition that means something that is unpredictable in the short term, but has a <em>predictable regularity</em> over the long term.</p>
 </div>
 <section id="random-variables">
 <h2>Random Variables<a class="headerlink" href="#random-variables" title="Link to this heading">#</a></h2>
-<p>A <em>random variable</em> refers to any variable whose value changes with each measurement, but whose behaviour over time adheres to a known <em>probability distribution</em>. This is an important concept because every value that we measure as part of an experiment is conceptualised as a realisation of a given random variable. For instance, we would treat <em>reaction time</em> as a random variable, with each measured value of reaction time representing a realistion of that random variable. Implicit in this is the idea that reaction time adheres to some probability distribution and that our experiment is simply the process of sampling value from that distribution.</p>
+<p>A <em>random variable</em> refers to any variable whose value changes with each measurement, but whose behaviour over time adheres to a known <em>probability distribution</em> that describes how probability is assigned to all the possible values that the variable could take. This is an important concept because every value that we measure as part of an experiment is conceptualised as a realisation of a given random variable. For instance, we would treat <em>reaction time</em> as a random variable, with each measured value of reaction time representing a realistion of that random variable. Implicit in this is the idea that reaction time adheres to some probability distribution and that our experiment is simply the process of sampling values from that distribution.</p>
 <p>In general, there are two different classes of random variable: <em>discrete</em> and <em>continuous</em>. This is an important distinction because one of the first things we need to do when analysing a dataset is determine which of the outcome variables are <em>discrete</em> and which are <em>continuous</em>. This will then dictate the range of models that are possible.</p>
 <section id="discrete-random-variables">
 <h3>Discrete Random Variables<a class="headerlink" href="#discrete-random-variables" title="Link to this heading">#</a></h3>
-<p>The first class of random variables concern those where the number of possible outcomes is <em>finite</em>. For instance, tossing a coin and seeing whether the outcome is either heads or tails. Counting the face values of two dice would also be discrete, because there are only a limited number of outcomes. Indeed, counting anything would be considered discrete because there are only a finite number of possibilities, with no values in-between. In all these cases, we can consider the outcome of the experiment<a class="footnote-reference brackets" href="#probexp" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> to be a random variable governed by some discrete probability distribution.</p>
+<p>The first class of random variables concern those where the number of possible outcomes is <em>finite</em>. For instance, tossing a coin and seeing whether the outcome is either heads or tails. Counting the face values of two dice would also be discrete, because there are only a limited number of outcomes. Indeed, counting anything would be considered discrete because there are only a finite number of possibilities, with no values in-between. In all these cases, we can consider the outcome of the experiment <a class="footnote-reference brackets" href="#probexp" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> to be a random variable governed by some discrete probability distribution.</p>
 <p>The textbook example of this is counting the number of heads after flipping a coin multiple times. For instance, if we flipped a coin 20 times then the probability of different numbers of <em>heads</em> can be described by the <em>binomial</em> distribution. If <span class="math notranslate nohighlight">\(y\)</span> is the count of the number of <em>heads</em>, then <span class="math notranslate nohighlight">\(y\)</span> is a random variable drawn from the binomial distribution, which we write as</p>
 <div class="math notranslate nohighlight">
 \[
-y \sim \mathcal{B}\left(n,p\right).
+y \sim \text{Bin}\left(n,p\right).
 \]</div>
 <p>The shape of the distribition is controlled by two <em>parameters</em>, <span class="math notranslate nohighlight">\(n\)</span> and <span class="math notranslate nohighlight">\(p\)</span>. In this example, <span class="math notranslate nohighlight">\(n\)</span> is the number of coin flips and <span class="math notranslate nohighlight">\(p\)</span> is the probability of <em>heads</em> on a single flip. So, here <span class="math notranslate nohighlight">\(n = 20\)</span> and (assuming the coin is fair) <span class="math notranslate nohighlight">\(p = 0.5\)</span>. Knowing these parameter values allows us to know everything we need to about the behaviour of <span class="math notranslate nohighlight">\(y\)</span>.</p>
 <div class="tip admonition">
 <p class="admonition-title">What is a Parameter?</p>
-<p>A <em>parameter</em> is simply a number, but one which has a particular <em>importance</em> for understanding some system. In the context of probability distributions, the parameters are numbers that control the <em>shape</em> of the distribution. We typically conceptualise a probability distribution as representing some <em>population</em>, where the parameters are constants that describe the behaviour of that population. As such, the parameters carry great importance for understanding the variable we are measuring. The primary aim of any parametric statistical analysis is to estimate the parameters of the population distribution. Once these values are known, we known everything we need to about the variable in question.</p>
+<p>A <em>parameter</em> is simply a number, but one which has a particular <em>importance</em> for understanding some system. In the context of probability distributions, the parameters are numbers that control the <em>shape</em> of the distribution. We typically conceptualise a probability distribution as representing some <em>population</em>, where the parameters are constants that describe the behaviour of that population. As such, the parameters carry great importance for understanding the variable we are measuring. The primary aim of any <em>parametric</em> statistical analysis is to estimate the <em>parameters</em> of the population distribution. Once these values are known, we known everything we need to about the variable in question.</p>
 </div>
 <p>We can use <code class="docutils literal notranslate"><span class="pre">R</span></code> to simulate realisations of this random variable</p>
 <div class="cell docutils container">
@@ -423,16 +423,13 @@ y \sim \mathcal{B}\left(n,p\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>12</li><li>8</li><li>14</li><li>8</li><li>9</li><li>11</li><li>14</li><li>10</li><li>5</li><li>9</li></ol>
-</div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1] 12  8 14  8  9 11 14 10  5  9
+</pre></div>
+</div>
+</div>
 </div>
 <p>which we can think of 10 repeats of flipping a coin 20 times and counting the number of heads. The first time we do this, we get <span class="math notranslate nohighlight">\(\frac{12}{20}\)</span> heads, the second time we get <span class="math notranslate nohighlight">\(\frac{8}{20}\)</span> heads and so on. Notice that we have no real way of knowing what the next value will be and thus, in the short-term, the variable <span class="math notranslate nohighlight">\(y\)</span> is unpredictable. However, in the long-term, we know how frequently certain values will appear and thus there is a much more general sense of predictability.</p>
-<p>We can visualise the complete distribution <span class="math notranslate nohighlight">\(\mathcal{B}\left(20,0.5\right)\)</span> using the code below. You can play around with the values of <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">p</span></code> to see how the distribution changes shape.</p>
+<p>We can visualise the complete distribution <span class="math notranslate nohighlight">\(\text{Bin}\left(20,0.5\right)\)</span> using the code below. You can play around with the values of <code class="docutils literal notranslate"><span class="pre">n</span></code> and <code class="docutils literal notranslate"><span class="pre">p</span></code> to see how the distribution changes shape.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Binomial probabilities</span>
@@ -449,26 +446,27 @@ y \sim \mathcal{B}\left(n,p\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/c06363b3558cdd88112a312e5e2a32b02538c65f6f64770d13328586f2b8d372.png"><img alt="_images/c06363b3558cdd88112a312e5e2a32b02538c65f6f64770d13328586f2b8d372.png" src="_images/c06363b3558cdd88112a312e5e2a32b02538c65f6f64770d13328586f2b8d372.png" style="width: 420px; height: 420px;" /></a>
+<a class="reference internal image-reference" href="_images/0b61b4babf2b6ad3be26eb15c5c560acdd3f24c6b005143b45d39aaf0d9f1480.png"><img alt="_images/0b61b4babf2b6ad3be26eb15c5c560acdd3f24c6b005143b45d39aaf0d9f1480.png" src="_images/0b61b4babf2b6ad3be26eb15c5c560acdd3f24c6b005143b45d39aaf0d9f1480.png" style="width: 1039px; height: 779px;" />
+</a>
 </div>
 </div>
-<p>Although experimental psychologists do not spend much time flipping coins, we need to think more generally about the utility of probability distributions. For instance, imagine an experiment where each subject completes a number of trials. After each trial, their response can be categorised in one of two ways. Over all the trials we sum the number of times their response is in one category rather than the other. In this example, the measurement could be considered a binomial random variable, with <span class="math notranslate nohighlight">\(n\)</span> equal to the number of trials and <span class="math notranslate nohighlight">\(p\)</span> unknown. The purpose of the experiment is then to estimate what <span class="math notranslate nohighlight">\(p\)</span> might be and, potentially, how <span class="math notranslate nohighlight">\(p\)</span> changes under different manipulations.</p>
+<p>Although behavioural scientists do not spend much time flipping coins, we need to think more generally about the utility of probability distributions. For instance, imagine an experiment where each subject completes a number of memory trials where their response on each trial is categorised as either “recognised” or “forgotten”. Over all the trials we sum the number of times they correctly recognised an item they had seen previously. In this example, the measurement could be considered a binomial random variable, with <span class="math notranslate nohighlight">\(n\)</span> equal to the number of trials and <span class="math notranslate nohighlight">\(p\)</span> unknown. The purpose of the experiment is then to estimate what <span class="math notranslate nohighlight">\(p\)</span> might be and, potentially, how <span class="math notranslate nohighlight">\(p\)</span> changes under different manipulations.</p>
 <p>Other examples of discrete probability distributions include the <a class="reference external" href="https://en.wikipedia.org/wiki/Bernoulli_distribution">Bernoulli distribution</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Poisson_distribution">Poisson distribution</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Negative_binomial_distribution">negative binomial distribution</a>.</p>
 <div class="important admonition">
 <p class="admonition-title">Treating Discrete as Continuous</p>
-<p>In many real-world cases of discrete random variables, you may find them being treated as <em>continuous</em> for the purpose of statistical analysis. For instance, the binomial distribution shown above <em>could</em> be approximated by a normal distribution. Historically, psychologists do this frequently when dealing with discrete data, such as the scores from a questionnaire or counts of the number of items remembered after a memory test. An argument can be made that the underlying structure that we are measuring is continuous and thus a predicted questionnaire score of <code class="docutils literal notranslate"><span class="pre">5.324</span></code> or quoting <code class="docutils literal notranslate"><span class="pre">7.235</span></code> items remembered are meaningful representation of the <em>latent variable</em> that is being captured. However, in many cases, this is done simply because psychologists are not well-trained on how to deal with discrete outcomes and so often simply ignore the true nature of what they are measuring. To become a powerful researcher in experimental psychology, it is important that this sort of information is <em>not</em> ignored and that the data are treated appropriately.</p>
+<p>In many real-world cases of discrete random variables, you may find them being treated as <em>continuous</em> for the purpose of statistical analysis. For instance, the binomial distribution shown above <em>could</em> be approximated by a normal distribution. Historically, psychologists do this frequently when dealing with discrete data, such as the scores from a questionnaire or counts of the number of items remembered after a memory test. An argument can be made that the underlying structure that we are measuring is continuous and thus a predicted questionnaire score of <code class="docutils literal notranslate"><span class="pre">5.324</span></code> is a meaningful representation of the <em>latent variable</em> that is being captured. However, in many cases, this is done simply because psychologists are not well-trained on how to deal with discrete outcomes. We will see how these types of outcome can be modelled next semester.</p>
 </div>
 </section>
 <section id="continuous-random-variables">
 <h3>Continuous Random Variables<a class="headerlink" href="#continuous-random-variables" title="Link to this heading">#</a></h3>
 <p>The second class of random variables concern those where the number of possible values is <em>infinte</em>. This can either be within an <em>unbounded</em> range (so the values can span <span class="math notranslate nohighlight">\(-\infty\)</span> to <span class="math notranslate nohighlight">\(\infty\)</span>), or within a <em>bounded</em> range (such as anything between 0 and 1).</p>
-<p>In many real-world situations our measurements are continuous and so treating the outcomes of experiments as <em>continuous</em> random variables is common. Indeed, huge amount of statistical theory are exclusively dedicated to continuous random variables. As an example, measuring the <em>height</em> of females in the UK could be conceptualised as a random variable drawn from a <em>normal</em> distribution. If <span class="math notranslate nohighlight">\(y\)</span> is the measurement of <em>height</em>, we would write</p>
+<p>In many real-world situations our measurements are continuous and so treating the outcomes of experiments as <em>continuous</em> random variables is common. Indeed, huge amounts of statistical theory are exclusively dedicated to continuous random variables. As an example, measuring the <em>height</em> of females in the UK could be conceptualised as a random variable drawn from a <em>normal</em> distribution. If <span class="math notranslate nohighlight">\(y\)</span> is the measurement of <em>height</em>, we would write</p>
 <div class="math notranslate nohighlight">
 \[
 y \sim \mathcal{N}\left(\mu,\sigma^{2}\right).
 \]</div>
 <p>Like the binomial distribution, the shape of the normal distribution is controlled by two parameters. The first is the <em>mean</em> (denoted <span class="math notranslate nohighlight">\(\mu\)</span>), which controls the value that the distribution is centred-on. The second is the <em>variance</em> (denoted <span class="math notranslate nohighlight">\(\sigma^{2}\)</span>), which controls the <em>width</em> of the distribution and thus how much values drawn from the distribution will differ from the mean.</p>
-<p>For the example of <em>height</em>, we could set <span class="math notranslate nohighlight">\(\mu = 162\)</span> and <span class="math notranslate nohighlight">\(\sigma^{2} = 6^{2} = 36\)</span>, both measured in centimetres. We could then use <code class="docutils literal notranslate"><span class="pre">R</span></code> to simulate realisations of this random variable using the <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> function<a class="footnote-reference brackets" href="#rnorm" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<p>For the example of <em>height</em>, we could set <span class="math notranslate nohighlight">\(\mu = 162\)</span> and <span class="math notranslate nohighlight">\(\sigma^{2} = 6^{2} = 36\)</span>, both measured in centimetres. We could then use <code class="docutils literal notranslate"><span class="pre">R</span></code> to simulate realisations of this random variable using the <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="nf">rnorm</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="m">10</span><span class="p">,</span><span class="w"> </span><span class="n">mean</span><span class="o">=</span><span class="m">162</span><span class="p">,</span><span class="w"> </span><span class="n">sd</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">36</span><span class="p">))</span>
@@ -477,13 +475,10 @@ y \sim \mathcal{N}\left(\mu,\sigma^{2}\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>166.550377068006</li><li>154.16288844593</li><li>157.184882587777</li><li>151.246554993233</li><li>161.747805275864</li><li>174.900255707068</li><li>151.378614970781</li><li>167.187921567392</li><li>151.679064611033</li><li>162.804754008847</li></ol>
-</div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> [1] 166.5504 154.1629 157.1849 151.2466 161.7478 174.9003 151.3786 167.1879 151.6791 162.8048
+</pre></div>
+</div>
+</div>
 </div>
 <p>which we can think of as measuring the height of 10 random females in the UK. We can also visualise the distribution <span class="math notranslate nohighlight">\(\mathcal{N}\left(162,36\right)\)</span> using the code below. Again, you can play around with the values of <code class="docutils literal notranslate"><span class="pre">mean</span></code> and <code class="docutils literal notranslate"><span class="pre">sd</span></code> to see how the distribution changes shape.</p>
 <div class="cell docutils container">
@@ -506,10 +501,11 @@ y \sim \mathcal{N}\left(\mu,\sigma^{2}\right).
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/2865fd4b3eda77dd217f640920724f4f7bb53a24ff21c4bed876f555573a338e.png"><img alt="_images/2865fd4b3eda77dd217f640920724f4f7bb53a24ff21c4bed876f555573a338e.png" src="_images/2865fd4b3eda77dd217f640920724f4f7bb53a24ff21c4bed876f555573a338e.png" style="width: 420px; height: 420px;" /></a>
+<a class="reference internal image-reference" href="_images/90372b35cb1514bac78cbeddd1db73bacf6935ff13e89a55c6d0d59476b2f1cb.png"><img alt="_images/90372b35cb1514bac78cbeddd1db73bacf6935ff13e89a55c6d0d59476b2f1cb.png" src="_images/90372b35cb1514bac78cbeddd1db73bacf6935ff13e89a55c6d0d59476b2f1cb.png" style="width: 1037px; height: 778px;" />
+</a>
 </div>
 </div>
-<p>Like the example earlier, it is unlikely that, as an experimental psychologist, you would spend much time measuring people’s <em>height</em>. However, thinking more generally, you might end up measuring <em>reaction time</em>, scores from a <em>visual analogue scale</em>, <em>IQ</em>, metrics derived from <em>eye-tracking</em> or <em>time spent</em> attending to a visual stimulus. These are all examples of measures that can, in theory, take an infinite number of values within a given range and thus are all examples of continuous random variables.</p>
+<p>Like the example earlier, it is unlikely that, as a behavioural scientist, you would spend much time measuring people’s <em>height</em>. However, thinking more generally, you might end up measuring <em>reaction time</em>, scores from a <em>visual analogue scale</em>, <em>IQ</em>, metrics derived from <em>eye-tracking</em> or <em>time spent</em> attending to a visual stimulus. These are all examples of measures that can, in theory, take an infinite number of values within a given range and thus are all examples of continuous random variables.</p>
 <p>Although the normal distribution is used most frequently, other examples of continuous probability distributions include the <a class="reference external" href="https://en.wikipedia.org/wiki/Gamma_distribution">gamma distribution</a>, <a class="reference external" href="https://en.wikipedia.org/wiki/Log-normal_distribution">log-normal distribution</a> and the <a class="reference external" href="https://en.wikipedia.org/wiki/Continuous_uniform_distribution">uniform distribution</a>.</p>
 <div class="tip admonition">
 <p class="admonition-title">The Core Assumptions of an Experiment</p>
@@ -532,14 +528,14 @@ E\left(y\right) = \mu.
 <p>As such, our <em>expectation</em> for any realisation of <span class="math notranslate nohighlight">\(y\)</span> would be equal to the mean of the distribution. This is an obvious example because the normal distribution has an expected value that is equal to one of its parameters. However, the principle is applicable to <em>any</em> distribution, whether its mean is coded directly by one of the parameters or not. For instance, if we had</p>
 <div class="math notranslate nohighlight">
 \[
-y \sim \mathcal{B}\left(n,p\right)
+y \sim \text{Bin}\left(n,p\right)
 \]</div>
 <p>then the expected value of <span class="math notranslate nohighlight">\(y\)</span> turns out to be</p>
 <div class="math notranslate nohighlight">
 \[
 E\left(y\right) = np.
 \]</div>
-<p>You can verify this by looking at the distribution we visualised earlier.</p>
+<p>which is a <em>function</em> of the parameters, but is not directly equivalent to either (unless <span class="math notranslate nohighlight">\(n=1\)</span>).</p>
 </section>
 <section id="the-variance-of-a-distribution">
 <h2>The Variance of a Distribution<a class="headerlink" href="#the-variance-of-a-distribution" title="Link to this heading">#</a></h2>
@@ -582,6 +578,30 @@ y_{i} = E\left(y\right) + \epsilon_{i}.
 \[
 \epsilon_{i} = y_{i} - E\left(y\right).
 \]</div>
+<p>To understand this notion of the expected values and the errors more clearly, take the random variable</p>
+<div class="math notranslate nohighlight">
+\[
+y_{i} \sim \mathcal{N}\left(\mu,\sigma^{2}\right)
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\mu = 2\)</span> and <span class="math notranslate nohighlight">\(\sigma^{2} = 1\)</span>. Imagine that the first value we sampled <span class="math notranslate nohighlight">\((i=1)\)</span> was equal to 5. Because <span class="math notranslate nohighlight">\(E(y) = \mu\)</span>, we can think of this as being the mean plus some random variation</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y_{1} &amp;= \mu + \epsilon_{1} \\
+      &amp;= 2 + 3 \\ 
+      &amp;= 5.
+\end{align*}
+\end{split}\]</div>
+<p>Imagine that the second value we sampled <span class="math notranslate nohighlight">\((i=2)\)</span> was then equal to 0.5. We can think of this as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+y_{2} &amp;= \mu + \epsilon_{2} \\ 
+      &amp;= 2 + -1.5           \\
+      &amp;= 0.5.
+\end{align*}
+\end{split}\]</div>
+<p>So notice that there is an element that is <em>constant</em> across measurements and an element that <em>changes</em> with each measurement. In this way, every single value we measure <em>contains</em> the expected value of the distribution, but has been deflected from the expected value by some random perturbation.</p>
 <div class="tip admonition">
 <p class="admonition-title">Understanding Indices</p>
 <p>In the equation above we used <span class="math notranslate nohighlight">\(y_{i}\)</span> to indicate a non-specific instance of the random variable <span class="math notranslate nohighlight">\(y\)</span>. The little <span class="math notranslate nohighlight">\(i\)</span> is known as an <em>index</em>. It is a short-hand way of expressing “any value of <span class="math notranslate nohighlight">\(y\)</span>”. Typically, the range of the index would be indicated using an expression such as <span class="math notranslate nohighlight">\(i = 1, \dots, n\)</span>, which just tells us that <span class="math notranslate nohighlight">\(i\)</span> can take any value between 1 and <span class="math notranslate nohighlight">\(n\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the total number of datapoints. It is effectively a short way of writing</p>
@@ -616,30 +636,6 @@ y_{i} = E\left(y\right) + \epsilon_{i}
 </pre></div>
 </div>
 </div>
-<p>To understand this notion of the expected values and the errors more clearly, take the random variable</p>
-<div class="math notranslate nohighlight">
-\[
-y_{i} \sim \mathcal{N}\left(\mu,\sigma^{2}\right)
-\]</div>
-<p>with <span class="math notranslate nohighlight">\(\mu = 2\)</span> and <span class="math notranslate nohighlight">\(\sigma^{2} = 1\)</span>. Imagine that the first value we sampled <span class="math notranslate nohighlight">\((i=1)\)</span> was equal to 5. Because <span class="math notranslate nohighlight">\(E(y) = \mu\)</span>, we can think of this as being the mean plus some random variation</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-y_{1} &amp;= \mu + \epsilon_{1} \\
-      &amp;= 2 + 3 \\ 
-      &amp;= 5.
-\end{align*}
-\end{split}\]</div>
-<p>Imagine that the second value we sampled <span class="math notranslate nohighlight">\((i=2)\)</span> was then equal to 0.5. We can think of this as</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align*}
-y_{2} &amp;= \mu + \epsilon_{2} \\ 
-      &amp;= 2 + -1.5           \\
-      &amp;= 0.5.
-\end{align*}
-\end{split}\]</div>
-<p>So notice that there is an element that is <em>constant</em> across measurements and an element that <em>changes</em> with each measurement. In this way, every single value we measure <em>contains</em> the expected value of the distribution, but has been deflected from the expected value by some random perturbation.</p>
 <p>Going back to the idea of capturing the <em>predictable</em> and <em>unpredictable</em> elements of a variable, it is the <em>variance</em> of the distribution that captures this unpredictability. As we have seen, the expected value is not subject to random variation and thus it is considered <em>constant</em> across measurements. Because of this, the expected value cannot be the source of the random variation that we see in real data. As such, the randomness must come from the errors. As we saw above, each measurement we make is associated with the <em>same</em> expected value and a <em>different</em> error. It is therefore <span class="math notranslate nohighlight">\(\epsilon\)</span> that has probabilistic behaviour. This means that we can express the probability model</p>
 <div class="math notranslate nohighlight">
 \[
@@ -672,7 +668,8 @@ y_{i} &amp;= \mu + \epsilon_{i} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<a class="reference internal image-reference" href="_images/eba85d3de01e87086b0b9a4aabf8426d47537e7123c2b90d67aa79f161cd9ef6.png"><img alt="_images/eba85d3de01e87086b0b9a4aabf8426d47537e7123c2b90d67aa79f161cd9ef6.png" src="_images/eba85d3de01e87086b0b9a4aabf8426d47537e7123c2b90d67aa79f161cd9ef6.png" style="width: 420px; height: 420px;" /></a>
+<a class="reference internal image-reference" href="_images/526abeb9d37559f7211d4b8f982e6227620f3ae3d73f11cb7dfb9fd086733cef.png"><img alt="_images/526abeb9d37559f7211d4b8f982e6227620f3ae3d73f11cb7dfb9fd086733cef.png" src="_images/526abeb9d37559f7211d4b8f982e6227620f3ae3d73f11cb7dfb9fd086733cef.png" style="width: 1037px; height: 778px;" />
+</a>
 </div>
 </div>
 <p>So notice that both the <em>errors</em> and the <em>raw data</em> have <em>the same form of distribution</em>. The only element that changes is that the mean of the error distribution is 0. We will see the importance of this as we progress on this unit, as many elements of statistical modelling concern themseleves with the behaviour of the <em>errors</em> and not the raw data.</p>
@@ -693,7 +690,7 @@ y_{i} &amp;= \mu + \epsilon_{i} \\
 <p>In this section, we have explored the important concept of <em>random variables</em>, <em>probability distributions</em>, and the most useful properties of those distributions. After reading this section, you should have a good sense of:</p>
 <ul class="simple">
 <li><p>What a <em>random variable</em> is, particularly in terms of the difference between <em>discrete</em> and <em>continuous</em> random variables.</p></li>
-<li><p>The notation used to express a random variable in relation to its distribution, such as <span class="math notranslate nohighlight">\(y \sim \mathcal{B}(n,p)\)</span>.</p></li>
+<li><p>The notation used to express a random variable in relation to its distribution, such as <span class="math notranslate nohighlight">\(y \sim \text{Bin}(n,p)\)</span>.</p></li>
 <li><p>What a <em>parameter</em> is in relation to a probability distribution and why it is important.</p></li>
 <li><p>What the <em>expected value</em> of a distribution is, the notation for expressing the expected value and why it is important.</p></li>
 <li><p>What the <em>variance</em> of a distribution is, the notation for expressing the variance and why it is important.</p></li>
@@ -703,13 +700,9 @@ y_{i} &amp;= \mu + \epsilon_{i} \\
 </aside>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="probexp" role="note">
+<aside class="footnote brackets" id="probexp" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Note that an “experiment” in the context of probability theory has a much broader definition than we would typically use in science.</p>
-</aside>
-<aside class="footnote brackets" id="rnorm" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Note that the <code class="docutils literal notranslate"><span class="pre">rnorm</span></code> function parameterises the normal distribution using the <em>standard deviation</em>, rather than the <em>variance.</em></p>
 </aside>
 </aside>
 </section>
@@ -774,11 +767,12 @@ y_{i} &amp;= \mu + \epsilon_{i} \\
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-variables">Random Variables</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#discrete-random-variables">Discrete Random Variables</a></li>

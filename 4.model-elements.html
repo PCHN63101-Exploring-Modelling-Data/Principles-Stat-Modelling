@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Elements of a Model &#8212; The Principles of Statistical Modelling</title>
   
@@ -31,10 +31,10 @@
 <link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
     <link rel="stylesheet" type="text/css" href="_static/test.css?v=90b7ad94" />
@@ -50,11 +50,11 @@
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
@@ -323,7 +323,7 @@
 
 
 <button onclick="toggleFullScreen()"
-  class="btn btn-sm btn-fullscreen-button"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
   title="Fullscreen mode"
   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
@@ -347,7 +347,7 @@
 <button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
 </button>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
 </div></div>
@@ -392,7 +392,7 @@
 <section id="variable-terminology">
 <h2>Variable Terminology<a class="headerlink" href="#variable-terminology" title="Link to this heading">#</a></h2>
 <p>Before going any further, we need to define some terminology. So far, we have only focussed on a single variable that is measured as part of an experiment. However, an experiment is more than just an exercise in <em>measurement</em>. Rather, an experiment is an exercise in assessing how that measurement <em>changes</em> after the manipulation of other variables<a class="footnote-reference brackets" href="#manip-foot" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>. In order to discuss statistical models, we therefore need to discuss these other variables and how they can be integrated into the framework we have already established.</p>
-<p>Our variable of primary interest is known as the <em>outcome variable</em>, whereas any other variables that we believe to be related to the outcome are known as <em>predictor</em> variables. For example, within the <code class="docutils literal notranslate"><span class="pre">mtcars</span></code> dataset we can consider <code class="docutils literal notranslate"><span class="pre">mpg</span></code> as our outcome variable with <code class="docutils literal notranslate"><span class="pre">wt</span></code> (<em>weight</em>) and <code class="docutils literal notranslate"><span class="pre">hp</span></code> (<em>horsepower</em>) as our predictor variables. In notation, we refer to our outcome as <span class="math notranslate nohighlight">\(y\)</span> and our predictors as <span class="math notranslate nohighlight">\(x\)</span>. Our assumption is then that the value of our <em>outcome</em> is some function of our <span class="math notranslate nohighlight">\(k\)</span> <em>predictors</em>, plus error</p>
+<p>Our variable of primary interest is known as the <em>outcome variable</em>, whereas any other variables that we believe to be related to the outcome are known as <em>predictor</em> variables. We will use <span class="math notranslate nohighlight">\(k\)</span> to denote the number of predictor variables. For example, within the <code class="docutils literal notranslate"><span class="pre">mtcars</span></code> dataset we can consider <code class="docutils literal notranslate"><span class="pre">mpg</span></code> as our outcome variable with <code class="docutils literal notranslate"><span class="pre">wt</span></code> (<em>weight</em>) and <code class="docutils literal notranslate"><span class="pre">hp</span></code> (<em>horsepower</em>) as our predictor variables. In this example, <span class="math notranslate nohighlight">\(k=2\)</span> predictors. In notation, we refer to our outcome as <span class="math notranslate nohighlight">\(y\)</span> and our predictors as <span class="math notranslate nohighlight">\(x\)</span>. Our assumption is then that the value of our <em>outcome</em> is some function of our <span class="math notranslate nohighlight">\(k\)</span> <em>predictors</em>, plus error</p>
 <div class="math notranslate nohighlight">
 \[
 y = f(\mathbf{x}) + \epsilon,
@@ -451,7 +451,7 @@ y = f(\mathbf{x}) + \epsilon,
 </tbody>
 </table>
 </div>
-<p>So, for every new parametric statistical model we encounter we need to ask what the assumed population distribution is, what the mean function is and what the variance function is. This is applicable to a large variety of models and transends both Frequentist and Bayesian approaches. This also connects very directly with the discussions of the <em>expected value</em> and <em>variance</em> of a distribution from the previous section. We will now work through each of these elements to understand their purpose and how they work. We will see many more examples of these throughout the course, so do not worry if these concepts do not click straight away.</p>
+<p>So, for every new parametric statistical model we encounter we need to ask what the assumed population distribution is, what the mean function is and what the variance function is. This is applicable to a large variety of models and connects directly with the discussions of the <em>expected value</em> and <em>variance</em> of a distribution from the previous section. We will now work through each of these elements to understand their purpose and how they work. We will see many more examples of these throughout the course, so do not worry if these concepts do not click straight away.</p>
 </section>
 <section id="component-1-the-population-distribution">
 <h2>Component 1: The Population Distribution<a class="headerlink" href="#component-1-the-population-distribution" title="Link to this heading">#</a></h2>
@@ -494,7 +494,7 @@ y_{i} \sim \mathcal{N}\left(\mu,\sigma^{2}\right),
     \epsilon_{i}  &amp;\sim  \mathcal{N}\left(0,\sigma^{2}\right).
 \end{align*}
 \end{split}\]</div>
-<p>So, irrespective of the value of <span class="math notranslate nohighlight">\(i\)</span>, this model assumes that the data are drawn from a normal distribution with a fixed mean and fixed variance. This is illustrated below within an interactive 3D plot using the <code class="docutils literal notranslate"><span class="pre">mtcars</span></code> data, with seven example normal distributions illustrated.</p>
+<p>So, irrespective of the value of <span class="math notranslate nohighlight">\(i\)</span>, this model assumes that the data are drawn from a normal distribution with a fixed mean and fixed variance. This is illustrated below within a 3D plot using the <code class="docutils literal notranslate"><span class="pre">mtcars</span></code> data, with seven example normal distributions illustrated. Click and drag this around to get a sense of what this simply model is assuming.</p>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
 <div class="output text_html"><!doctype html>
@@ -562,7 +562,7 @@ y_{i} \sim \mathcal{N}\left(\beta_{0} + \beta_{1}x_{i1},\sigma^{2}\right),
 </html>
 </div></div>
 </div>
-<p>Very generally, the mean function can be thought of as defining how to <em>convert</em> between the values of the predictor variables and the values of the outcome. In the example above, the regression equation defined how to convert values of <code class="docutils literal notranslate"><span class="pre">wt</span></code> into values of <code class="docutils literal notranslate"><span class="pre">mpg</span></code>. This conversion is achieved using a simple straight-line, but other forms of relationship are also possible, depending upon the data in question. Indeed, different mean functions are one of the main elements that distinguishes between different statistical models. Importantly, there is nothing within this framework to say that the conversion has to be a <em>good one</em>, only that some function is needed to convert the units of the predictors into the units of the outcome. The art of model building is partly about choosing the best mean function for the data in question. For instance, We could easily choose a mean function that simply multiplies the value of <code class="docutils literal notranslate"><span class="pre">wt</span></code> by 10 to get it on a similar scale to <code class="docutils literal notranslate"><span class="pre">mpg</span></code>:</p>
+<p>Very generally, the mean function can be thought of as defining how to <em>convert</em> between the values of the predictor variables and the values of the outcome. In the example above, the regression equation defined how to convert values of <code class="docutils literal notranslate"><span class="pre">wt</span></code> into values of <code class="docutils literal notranslate"><span class="pre">mpg</span></code>. This conversion is achieved using a simple straight-line, but other forms of relationship are also possible, depending upon the data in question. Indeed, different mean functions are one of the main elements that distinguish different statistical models. Importantly, there is nothing within this framework to say that the conversion has to be a <em>good one</em>, only that some function is needed to convert the units of the predictors into the units of the outcome. The art of model building is partly about choosing the best mean function for the data in question. For instance, We could easily choose a mean function that simply multiplies the value of <code class="docutils literal notranslate"><span class="pre">wt</span></code> by 10 to get it on a similar scale to <code class="docutils literal notranslate"><span class="pre">mpg</span></code>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
@@ -651,11 +651,11 @@ y_{i} \sim \mathcal{N}\left(\mu,\sigma^{2}\right),
 </aside>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="manip-foot" role="note">
+<aside class="footnote brackets" id="manip-foot" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
-<p>The term “manipulation” is used very generally here. The experimental manipulation can either be entirely under the control of the experimenter (a so-called “true” experiment), or it may be naturally occurring. For instance, in the <code class="docutils literal notranslate"><span class="pre">mtcars</span></code> example, the weight of the cars was not directly manipulated, rather it was a naturally-occurring difference that was exploited for the purpose of the experiment. A similar example would be comparing patients and controls, as you cannot randomly assign people to either having a condition or not having a condition.</p>
+<p>The term “manipulation” is used very generally here. The experimental manipulation can either be entirely under the control of the experimenter (a so-called “true” experiment), or it may be naturally occurring. For instance, in the <code class="docutils literal notranslate"><span class="pre">mtcars</span></code> example, the weight of the cars was not directly manipulated, rather it was a naturally-occurring difference that was exploited for the purpose of the experiment. A similar example would be comparing patients and controls, as you cannot randomly assign people to having a medical condition or not.</p>
 </aside>
-<aside class="footnote brackets" id="conditional-foot" role="note">
+<aside class="footnote brackets" id="conditional-foot" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
 <p>This can be directly compared with the programming concept of a <em>conditional statement</em>. We can think of the vertical bar as a way of writing an if-statement. For instance: “<code class="docutils literal notranslate"><span class="pre">if</span></code> <span class="math notranslate nohighlight">\(\mathbf{x}_{i}\)</span> contains a specific set of values <code class="docutils literal notranslate"><span class="pre">then</span></code> the distribution of <span class="math notranslate nohighlight">\(y_{i}\)</span> will take the following form”.</p>
 </aside>
@@ -722,11 +722,12 @@ y_{i} \sim \mathcal{N}\left(\mu,\sigma^{2}\right),
                 <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
     <i class="fa-solid fa-list"></i> Contents
   </div>
-  <nav class="bd-toc-nav page-toc">
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-terminology">Variable Terminology</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#model-components">Model Components</a></li>
